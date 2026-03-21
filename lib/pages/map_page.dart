@@ -6,6 +6,9 @@ class MapPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(title: const Text('Map Page')),
+      body: const Center(child: Text('Map content goes here')),
+    );
   }
 }
