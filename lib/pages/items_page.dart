@@ -1,79 +1,60 @@
 import 'package:flutter/material.dart';
 
-class ItemsPage extends StatefulWidget {
+class ItemsPage extends StatelessWidget {
   const ItemsPage({super.key});
 
   @override
-  State<ItemsPage> createState() => _ItemsPageState();
-}
-
-class _ItemsPageState extends State<ItemsPage> {
-  final _controller = TextEditingController();
-
-  final List<String> _all = const [
-    'Warszawa',
-    'Wrocław',
-    'Gdańsk',
-    'Kraków',
-    'Poznań',
-  ];
-
-  String _query = '';
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    final filtered = _all
-        .where((e) => e.toLowerCase().contains(_query.toLowerCase()))
-        .toList();
-
     return Scaffold(
       appBar: AppBar(title: const Text('Items Page')),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: SearchBar(
-              controller: _controller,
-              onChanged: (value) {
-                setState(() {
-                  _query = value;
-                });
-              },
-              leading: Icon(  
-                Icons.search,
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ListTile(
+            leading: CircleAvatar(
+              backgroundImage: AssetImage('images/ladowarka.png'),
+              radius: 30,
+            ),
+            title: const Text('ecar Ladowarka'),
+            subtitle: RichText(
+              text: 
+              TextSpan(
+                children: [
+                  
+                  TextSpan(text: "gniazdo Type 1, 50 kW", style: TextStyle(color: Colors.red)),
+                  TextSpan(text: "  (unavailable)", style: TextStyle(color: Colors.green)),
+                  TextSpan(text: "  (unavailable)", style: TextStyle(color: Colors.grey))
+                ],
               ),
-              hintText: 'Szukaj...',
-              trailing: [
-                IconButton(
-                  icon: const Icon(Icons.clear),
-                  onPressed: () {
-                    _controller.clear();
-                    setState(() => _query = '');
-                  },
-                ),
+            ),
+            // isThreeLine: true,
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text('1,5 kilometrów'),
+                const Icon(Icons.navigation)
               ],
-              // decoration: const InputDecoration(
-              //   prefixIcon: Icon(Icons.search),
-              //   hintText: 'Szukaj...',
-              //   border:
             ),
           ),
-
-          Expanded(
-            child: ListView.builder(
-              itemCount: filtered.length,
-              itemBuilder: (_, i) => ListTile(title: Text(filtered[i])),
+          ListTile(
+            leading: const Icon(Icons.directions_car),
+            title: const Text('Car 2'),
+            subtitle: const Text('Available'),
+            trailing: ElevatedButton(
+              onPressed: () {},
+              child: const Text('Book Now'),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.directions_car),
+            title: const Text('Car 3'),
+            subtitle: const Text('Unavailable'),
+            trailing: ElevatedButton(
+              onPressed: null,
+              child: const Text('Book Now'),
             ),
           ),
         ],
-      ),
+      )
     );
   }
 }
