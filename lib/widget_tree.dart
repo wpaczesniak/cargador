@@ -18,7 +18,7 @@ class _WidgetTreeState extends State<WidgetTree> {
     HomePage(),
     MapPage(),
     ItemsPage(),
-    SettingsPage()
+    SettingsPage(),
   ];
 
   @override

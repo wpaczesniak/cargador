@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
+
+  @override
+  State<SettingsPage> createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  String language = 'English';
 
   @override
   Widget build(BuildContext context) {
@@ -48,14 +55,17 @@ class SettingsPage extends StatelessWidget {
             SizedBox(height: 8),
             ListTile(
               leading: const Icon(Icons.language),
-              title: const Text('Language'),
+              title:  Text(language),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text('English'),
+                  Text(language),
                   Icon(Icons.arrow_right),
                 ],
               ), 
+              onTap: () {
+                show();
+              },
             ),   
             SizedBox(height: 8),
             ListTile(
@@ -108,5 +118,50 @@ class SettingsPage extends StatelessWidget {
         ),
       ),
     );
+  }
+void show() {
+    var simpleDialog = SimpleDialog(
+      title: Text('Choose a language'),
+      children: [
+        SimpleDialogOption(
+          child: Text('English'),
+          onPressed: () {
+            print("English Selected Selected!");
+            setState(() {
+              language = 'English';
+            });
+            Navigator.pop(context); // Pass value on press
+          },
+        ),
+        SimpleDialogOption(
+          child: Text('Spanish'),
+          onPressed: () {
+            setState(() {
+              language = 'Spanish';
+            });
+            print("Spanish Selected!");
+            Navigator.pop(context); // Pass value on press
+          },
+        ),
+        SimpleDialogOption(
+          child: Text('French'),
+          onPressed: () {
+            setState(() {
+              language = 'French';
+            });
+            print("French Selected!");
+            Navigator.pop(context); // Pass value on press
+          },
+        ),
+      ],
+    );
+
+    showDialog(
+        context: context,
+        builder: (context) {
+          return simpleDialog;
+        }
+    );
+
   }
 }
