@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../core/notifiers.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -72,10 +73,14 @@ class _SettingsPageState extends State<SettingsPage> {
               leading: const Icon(Icons.dark_mode),
               title: const Text('Dark/Light'),
               trailing: Switch(
-                value: false,
+                value: isDarkModeEnabledNotifier.value,
                 onChanged: (val) {
+                  setState(() {
+                    isDarkModeEnabledNotifier.value = !isDarkModeEnabledNotifier.value;                   
+                  });
                   // Handle theme change
                 },
+                
               ),
             ),   
             SizedBox(height: 8),
