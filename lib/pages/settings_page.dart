@@ -70,7 +70,9 @@ class _SettingsPageState extends State<SettingsPage> {
             ),   
             SizedBox(height: 8),
             ListTile(
-              leading: const Icon(Icons.dark_mode),
+              leading: ValueListenableBuilder(valueListenable: isDarkModeEnabledNotifier, builder: (context, isDark, child) { 
+                return Icon(isDark ? Icons.light_mode : Icons.dark_mode);
+              }),
               title: const Text('Dark/Light'),
               trailing: Switch(
                 value: isDarkModeEnabledNotifier.value,
