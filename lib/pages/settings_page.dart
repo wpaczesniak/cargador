@@ -100,7 +100,7 @@ class _SettingsPageState extends State<SettingsPage> {
             SizedBox(height: 8),
             ListTile(
               leading: const Icon(Icons.email),
-              title: const Text('john.doe@example.com'),
+              title: const Text('john.doerr@example.com'),
               trailing: Icon(Icons.arrow_right),
             ),
             SizedBox(height: 8),
