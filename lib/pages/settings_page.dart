@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../core/notifiers.dart';
+import 'help_center.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -52,6 +53,7 @@ class _SettingsPageState extends State<SettingsPage> {
               leading: const Icon(Icons.local_phone),
               title: const Text('Help Center'),
               trailing: Icon(Icons.arrow_right),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HelpCenter())),
             ),   
             SizedBox(height: 8),
             ListTile(
