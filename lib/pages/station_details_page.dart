@@ -9,17 +9,42 @@ class StationDetails extends StatelessWidget {
       appBar: AppBar(title: const Text('Station Details')),
       body: Column(
         children: [
-          DrawerHeader(child:   CircleAvatar(
-              backgroundImage: AssetImage('images/ladowarka.png'),
-              radius: 60,
+          Card.outlined(
+            child: Container(
+              padding: EdgeInsets.all(10),
+              width: double.infinity,
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    leading: Container(
+                      width: 50,
+                      height: 120,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                          15,
+                        ), // Adjust the radius as needed
+                      ),
+                      child: Image(image: AssetImage('images/ladowarka.png')),
+                      
+                    ),
+                    title: Text('ecar Ladowarka'),
+                    subtitle: Text('gniazdo Type 1, 50 kW'),
+                  ),
+                  // SizedBox(height: 15),
+                  // Image(image: AssetImage('images/ladowarka.png')),
+                  // Text(
+                  //   "ecar Ladowarka",
+                  //   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  // ),
+                  // Text("This is  Description"),
+                  // SizedBox(height: 10),
+                ],
+              ),
             ),
-            
           ),
-          const Text('Details about the station go here'),
-          const Text('More information about the station can be displayed here'),
         ],
-      
-      )
+      ),
     );
   }
 }
