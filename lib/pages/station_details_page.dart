@@ -10,39 +10,122 @@ class StationDetails extends StatelessWidget {
       body: Column(
         children: [
           Card.outlined(
-            child: Container(
-              padding: EdgeInsets.all(10),
-              width: double.infinity,
-              child: Column(
-                children: <Widget>[
-                  ListTile(
-                    leading: Container(
-                      width: 50,
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image.asset(
+                      'images/ladowarka.png',
+                      width: 120,
                       height: 120,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(
-                          15,
-                        ), // Adjust the radius as needed
-                      ),
-                      child: Image(image: AssetImage('images/ladowarka.png')),
-                      
+                      fit: BoxFit.cover,
                     ),
-                    title: Text('ecar Ladowarka'),
-                    subtitle: Text('gniazdo Type 1, 50 kW'),
                   ),
-                  // SizedBox(height: 15),
-                  // Image(image: AssetImage('images/ladowarka.png')),
-                  // Text(
-                  //   "ecar Ladowarka",
-                  //   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  // ),
-                  // Text("This is  Description"),
-                  // SizedBox(height: 10),
+                  const SizedBox(width: 16),
+                  const Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '<<Lokalizacja>>',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(height: 4),
+                        Text(
+                          '<nazwa operatora>',
+                          style: TextStyle(fontSize: 14, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      // Handle navigation to station
+                    },
+                    icon: const Icon(Icons.reviews),
+                    label: const Text('Reviews'),
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      // Handle reservation
+                    },
+                    icon: const Icon(Icons.navigation),
+                    label: const Text('Navigate'),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      // Handle navigation to station
+                    },
+                    icon: const Icon(Icons.battery_unknown),
+                    label: const Text('Battery Info'),
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      // Handle reservation
+                    },
+                    icon: const Icon(Icons.garage),
+                    label: const Text('Parking'),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Divider(),
+          Text("Godziny otwarcia"),
+          const SizedBox(height: 8),
+          Text("Monday - Friday: 8:00 AM - 8:00 PM"),
+          Text("Saturday: 9:00 AM - 6:00 PM"),
+          Text("Sunday: Closed"),
+          Divider(),
+          Text("Type Plugins"),
+          const SizedBox(height: 8),
+          // Row(
+          //   children: [
+          //     Card(
+          //       elevation: 4.0,
+          //       child: Column(
+          //         mainAxisSize: MainAxisSize.min,
+          //         children: [
+          //           ListTile(
+          //             leading: const Icon(Icons.bolt),
+          //             title: const Text('Type 1'),
+          //             subtitle: const Text('50 kW'),
+          //           ),
+          //         ],
+          //       ),
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     );
