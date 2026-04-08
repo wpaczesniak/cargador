@@ -1,6 +1,8 @@
+import 'package:cargador/pages/booking_page.dart';
 import 'package:flutter/material.dart';
 import '../core/notifiers.dart';
 import 'help_center.dart';
+
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -47,6 +49,7 @@ class _SettingsPageState extends State<SettingsPage> {
               leading: const Icon(Icons.book),
               title: const Text('My Bookings'),
               trailing: Icon(Icons.arrow_right),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyBookings())),
             ),
             SizedBox(height: 8),
             ListTile(

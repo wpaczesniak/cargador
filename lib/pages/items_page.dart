@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'station_details_page.dart';
+import 'filter_page.dart';
 
 class ItemsPage extends StatelessWidget {
   const ItemsPage({super.key});
@@ -10,31 +11,12 @@ class ItemsPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Items Page')),
       body: Column(
         children: [
-          ListTile(
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('images/ladowarka.png'),
-              radius: 30,
+          IconButton.outlined(
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => FilterPage()),
             ),
-            title: const Text('ecar Ladowarka'),
-            subtitle: RichText(
-              text: 
-              TextSpan(
-                children: [
-                  TextSpan(text: "gniazdo Type 1, 50 kW", style: TextStyle(color: Colors.red)),
-                  TextSpan(text: "  (unavailable)", style: TextStyle(color: Colors.green)),
-                  TextSpan(text: "  (unavailable)", style: TextStyle(color: Colors.grey))
-                ],
-              ),
-            ),
-            // isThreeLine: true,
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Text('1,5 kilometrów'),
-                const Icon(Icons.navigation)
-              ],
-            ),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => StationDetails())),
+            icon: Icon(Icons.filter_list),
           ),
           ListTile(
             leading: CircleAvatar(
@@ -43,12 +25,20 @@ class ItemsPage extends StatelessWidget {
             ),
             title: const Text('ecar Ladowarka'),
             subtitle: RichText(
-              text: 
-              TextSpan(
+              text: TextSpan(
                 children: [
-                  TextSpan(text: "gniazdo Type 1, 50 kW", style: TextStyle(color: Colors.red)),
-                  TextSpan(text: "  (unavailable)", style: TextStyle(color: Colors.green)),
-                  TextSpan(text: "  (unavailable)", style: TextStyle(color: Colors.grey))
+                  TextSpan(
+                    text: "gniazdo Type 1, 50 kW",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  TextSpan(
+                    text: "  (unavailable)",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                  TextSpan(
+                    text: "  (unavailable)",
+                    style: TextStyle(color: Colors.grey),
+                  ),
                 ],
               ),
             ),
@@ -57,10 +47,13 @@ class ItemsPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Text('1,5 kilometrów'),
-                const Icon(Icons.navigation)
+                const Icon(Icons.navigation),
               ],
             ),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => StationDetails())),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => StationDetails()),
+            ),
           ),
           ListTile(
             leading: CircleAvatar(
@@ -69,12 +62,20 @@ class ItemsPage extends StatelessWidget {
             ),
             title: const Text('ecar Ladowarka'),
             subtitle: RichText(
-              text: 
-              TextSpan(
+              text: TextSpan(
                 children: [
-                  TextSpan(text: "gniazdo Type 1, 50 kW", style: TextStyle(color: Colors.red)),
-                  TextSpan(text: "  (unavailable)", style: TextStyle(color: Colors.green)),
-                  TextSpan(text: "  (unavailable)", style: TextStyle(color: Colors.grey))
+                  TextSpan(
+                    text: "gniazdo Type 1, 50 kW",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  TextSpan(
+                    text: "  (unavailable)",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                  TextSpan(
+                    text: "  (unavailable)",
+                    style: TextStyle(color: Colors.grey),
+                  ),
                 ],
               ),
             ),
@@ -83,10 +84,13 @@ class ItemsPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Text('1,5 kilometrów'),
-                const Icon(Icons.navigation)
+                const Icon(Icons.navigation),
               ],
             ),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => StationDetails())),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => StationDetails()),
+            ),
           ),
           ListTile(
             leading: CircleAvatar(
@@ -95,12 +99,20 @@ class ItemsPage extends StatelessWidget {
             ),
             title: const Text('ecar Ladowarka'),
             subtitle: RichText(
-              text: 
-              TextSpan(
+              text: TextSpan(
                 children: [
-                  TextSpan(text: "gniazdo Type 1, 50 kW", style: TextStyle(color: Colors.red)),
-                  TextSpan(text: "  (unavailable)", style: TextStyle(color: Colors.green)),
-                  TextSpan(text: "  (unavailable)", style: TextStyle(color: Colors.grey))
+                  TextSpan(
+                    text: "gniazdo Type 1, 50 kW",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  TextSpan(
+                    text: "  (unavailable)",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                  TextSpan(
+                    text: "  (unavailable)",
+                    style: TextStyle(color: Colors.grey),
+                  ),
                 ],
               ),
             ),
@@ -109,10 +121,13 @@ class ItemsPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Text('1,5 kilometrów'),
-                const Icon(Icons.navigation)
+                const Icon(Icons.navigation),
               ],
             ),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => StationDetails())),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => StationDetails()),
+            ),
           ),
           ListTile(
             leading: CircleAvatar(
@@ -121,12 +136,20 @@ class ItemsPage extends StatelessWidget {
             ),
             title: const Text('ecar Ladowarka'),
             subtitle: RichText(
-              text: 
-              TextSpan(
+              text: TextSpan(
                 children: [
-                  TextSpan(text: "gniazdo Type 1, 50 kW", style: TextStyle(color: Colors.red)),
-                  TextSpan(text: "  (unavailable)", style: TextStyle(color: Colors.green)),
-                  TextSpan(text: "  (unavailable)", style: TextStyle(color: Colors.grey))
+                  TextSpan(
+                    text: "gniazdo Type 1, 50 kW",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  TextSpan(
+                    text: "  (unavailable)",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                  TextSpan(
+                    text: "  (unavailable)",
+                    style: TextStyle(color: Colors.grey),
+                  ),
                 ],
               ),
             ),
@@ -135,13 +158,53 @@ class ItemsPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Text('1,5 kilometrów'),
-                const Icon(Icons.navigation)
+                const Icon(Icons.navigation),
               ],
             ),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => StationDetails())),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => StationDetails()),
+            ),
+          ),
+          ListTile(
+            leading: CircleAvatar(
+              backgroundImage: AssetImage('images/ladowarka.png'),
+              radius: 30,
+            ),
+            title: const Text('ecar Ladowarka'),
+            subtitle: RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: "gniazdo Type 1, 50 kW",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  TextSpan(
+                    text: "  (unavailable)",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                  TextSpan(
+                    text: "  (unavailable)",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ],
+              ),
+            ),
+            // isThreeLine: true,
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text('1,5 kilometrów'),
+                const Icon(Icons.navigation),
+              ],
+            ),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => StationDetails()),
+            ),
           ),
         ],
-      )
+      ),
     );
   }
 }
