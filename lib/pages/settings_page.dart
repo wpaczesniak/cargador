@@ -2,6 +2,7 @@ import 'package:cargador/pages/booking_page.dart';
 import 'package:flutter/material.dart';
 import '../core/notifiers.dart';
 import 'help_center.dart';
+import 'vehicles_page.dart';
 
 
 class SettingsPage extends StatefulWidget {
@@ -43,6 +44,7 @@ class _SettingsPageState extends State<SettingsPage> {
               leading: const Icon(Icons.directions_car),
               title: const Text('My Vehicles'),
               trailing: Icon(Icons.arrow_right),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyVehicles())),
             ),   
             SizedBox(height: 8),
             ListTile(
