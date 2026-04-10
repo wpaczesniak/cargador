@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../core/notifiers.dart';
 import 'help_center.dart';
 import 'vehicles_page.dart';
+import 'personal_page.dart';
 
 
 class SettingsPage extends StatefulWidget {
@@ -38,6 +39,7 @@ class _SettingsPageState extends State<SettingsPage> {
               leading: const Icon(Icons.person),
               title: const Text('Personal Information'),
               trailing: Icon(Icons.arrow_right),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalInformation())),
             ),   
             SizedBox(height: 8),
             ListTile(
