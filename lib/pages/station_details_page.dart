@@ -1,3 +1,4 @@
+import 'package:cargador/pages/booking_page.dart';
 import 'package:flutter/material.dart';
 
 class StationDetails extends StatelessWidget {
@@ -40,10 +41,7 @@ class StationDetails extends StatelessWidget {
                           SizedBox(height: 4),
                           Text(
                             '<nazwa operatora>',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.black54,
-                            ),
+                            style: TextStyle(fontSize: 14, color: Colors.black54),
                           ),
                         ],
                       ),
@@ -127,10 +125,7 @@ class StationDetails extends StatelessWidget {
                         ),
                         SizedBox(
                           height: 200.0,
-                          child: Image(
-                            image: AssetImage('images/ladowarka.png'),
-                            fit: BoxFit.cover,
-                          ),
+                          child: Image(image: AssetImage('images/ladowarka.png'), fit: BoxFit.cover)
                         ),
                         Container(
                           padding: EdgeInsets.all(16.0),
@@ -141,9 +136,12 @@ class StationDetails extends StatelessWidget {
                           children: [
                             TextButton(
                               child: const Text('CONTACT AGENT'),
-                              onPressed: () {
-                                /* ... */
+                              onPressed:() => {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => BookingPage())),
+                                 /* ... */
                               },
+                                /* ... */
+                              
                             ),
                             TextButton(
                               child: const Text('LEARN MORE'),
@@ -169,10 +167,7 @@ class StationDetails extends StatelessWidget {
                         ),
                         SizedBox(
                           height: 200.0,
-                          child: Image(
-                            image: AssetImage('images/ladowarka.png'),
-                            fit: BoxFit.cover,
-                          ),
+                          child: Image(image: AssetImage('images/ladowarka.png'), fit: BoxFit.cover)
                         ),
                         Container(
                           padding: EdgeInsets.all(16.0),
@@ -215,10 +210,7 @@ class StationDetails extends StatelessWidget {
                         ),
                         SizedBox(
                           height: 200.0,
-                          child: Image(
-                            image: AssetImage('images/ladowarka.png'),
-                            fit: BoxFit.cover,
-                          ),
+                          child: Image(image: AssetImage('images/ladowarka.png'), fit: BoxFit.cover)
                         ),
                         Container(
                           padding: EdgeInsets.all(16.0),
@@ -257,10 +249,7 @@ class StationDetails extends StatelessWidget {
                         ),
                         SizedBox(
                           height: 200.0,
-                          child: Image(
-                            image: AssetImage('images/ladowarka.png'),
-                            fit: BoxFit.cover,
-                          ),
+                          child: Image(image: AssetImage('images/ladowarka.png'), fit: BoxFit.cover)
                         ),
                         Container(
                           padding: EdgeInsets.all(16.0),

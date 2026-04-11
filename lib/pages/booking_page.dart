@@ -1,92 +1,58 @@
 import 'package:flutter/material.dart';
 
-class MyBookings extends StatelessWidget {
-  const MyBookings({super.key});
+class BookingPage extends StatelessWidget {
+  const BookingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('My Bookings')),
+      appBar: AppBar(title: const Text('Booking Page')),
       body: Column(
         children: [
-          Card(
-            elevation: 4.0,
-            child: Column(
-              children: [
-                ListTile(
-                  title: Text('heading'),
-                  subtitle: Text('subheading'),
-                  trailing: Icon(Icons.favorite_outline),
-                ),
-                SizedBox(
-                  height: 200.0,
-                  child: Ink.image(
-                    image: AssetImage('images/ladowarka.png'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Column(
-                  children: [Text('supporting text'), Text('supporting text')],
-                ),
-                OverflowBar(
+          Card.outlined(
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextButton(
-                      child: const Text('CONTACT AGENT'),
-                      onPressed: () {
-                        /* ... */
-                      },
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset(
+                        'images/ladowarka.png',
+                        width: 120,
+                        height: 120,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                    TextButton(
-                      child: const Text('LEARN MORE'),
-                      onPressed: () {
-                        /* ... */
-                      },
+                    const SizedBox(width: 16),
+                    const Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '<<Lokalizacja>>',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            '<nazwa operatora>',
+                            style: TextStyle(fontSize: 14, color: Colors.black54),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
-              ],
+              ),
             ),
-          ),
-          Card(
-            elevation: 4.0,
-            child: Column(
-              children: [
-                ListTile(
-                  title: Text('heading'),
-                  subtitle: Text('subheading'),
-                  trailing: Icon(Icons.favorite_outline),
-                ),
-                SizedBox(
-                  height: 200.0,
-                  child: Ink.image(
-                    image: AssetImage('images/ladowarka.png'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Column(
-                  children: [Text('supporting text'), Text('supporting text')],
-                ),
-                OverflowBar(
-                  children: [
-                    TextButton(
-                      child: const Text('CONTACT AGENT'),
-                      onPressed: () {
-                        /* ... */
-                      },
-                    ),
-                    TextButton(
-                      child: const Text('LEARN MORE'),
-                      onPressed: () {
-                        /* ... */
-                      },
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+          Divider(),
+          Text('Szczegóły Rezerwacji'),
+          
         ],
-      ),
+      )
     );
   }
 }
